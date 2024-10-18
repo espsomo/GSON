@@ -87,6 +87,14 @@ class string : public Printable {
         if (txt.valid()) _addRaw(txt, false, false);
         return *this;
     }
+    
+    // прибавить текст and size
+    string& addTextRaw(const char* txt, size_t size) {
+        if (txt != nullptr && size > 0) {
+            s.concat(txt, size);
+        }
+        return *this;
+    }
 
     // прибавить текст (строка любого типа) без запятой и кавычек с escape символов
     string& addTextRawEsc(const Text& txt) {
