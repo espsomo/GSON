@@ -94,6 +94,14 @@ class string : public Printable {
         return *this;
     }
 
+   // прибавить текст and size
+    string& addTextRaw(const char* txt, size_t size) {
+        if (txt != nullptr && size > 0) {
+            s.concat(txt, size);
+        }
+        return *this;
+    }
+
     // прибавить текст (строка любого типа) без кавычек
     string& addText(const Text& txt) {
         if (txt.valid()) {
